@@ -13,7 +13,7 @@ $(function () {
 
   //从layui中获取form对象
   let form = layui.form
-  let layer =layui.layer
+  let layer = layui.layer
   // 通过 FileSystemDirectoryEntry.cerify() 函数自定义校验规则
   form.verify({
     //自定义了一个规则
@@ -48,7 +48,7 @@ $(function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
         layer.msg(JSON.parse(xhr.responseText).message);
         $('#link_login').click()
-      }else{
+      } else {
         layer.msg(JSON.parse(xhr.responseText).message);
       }
     };
@@ -71,15 +71,16 @@ $(function () {
     // 发送并接受返回值
     xhr.onreadystatechange = function () {
       // 这步为判断服务器是否正确响应
-      if (xhr.readyState == 4 && xhr.status == 200 ) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
         layer.msg(JSON.parse(xhr.responseText).message);
         $('#link_login').click()
-        location.href='/大事件项目/个人练习/index.html'
+        location.href = '/大事件项目/个人练习/index.html'
         //将token值存入本地存储
-        localStorage.setItem('token',JSON.parse(xhr.responseText).token)
-      }else{
+        localStorage.setItem('token', JSON.parse(xhr.responseText).token)
+      } else {
         layer.msg(JSON.parse(xhr.responseText).message);
       }
+      
     };
   })
 })
