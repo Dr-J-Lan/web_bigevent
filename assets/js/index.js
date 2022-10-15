@@ -18,7 +18,7 @@ function getUserInfo() {
   // xhr.open('get', 'http://big-event-vue-api-t.itheima.net/my/userinfo')
   // // 如果想要使用post提交数据,必须添加此行
   // xhr.setRequestHeader('Content-Type', 'application/json')
-  // // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  // // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlenstatusd");
   // xhr.setRequestHeader('Authorization', localStorage.getItem('token') ? localStorage.getItem('token') : '')
   // // 将数据通过send方法传递
   // xhr.send()
@@ -38,7 +38,7 @@ function getUserInfo() {
     url: '/my/userinfo',
     success: function (res) {
       console.log(res);
-      if (res.code !== 0) {
+      if (res.status !== 0) {
         return layui.layer.msg('获取用户信息失败！')
       }
       // 调用 renderAvatar 渲染用户的头像
